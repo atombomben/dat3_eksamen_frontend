@@ -1,0 +1,1 @@
+scp -r ./build root@atom:/var/www/eksamen
