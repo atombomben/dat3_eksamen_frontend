@@ -1,1 +1,1 @@
-scp -r ./build root@atom:/var/www/eksamen
+scp -r ./build root@165.227.175.220:/var/www/eksamen
