@@ -9,6 +9,7 @@ import Facade from "./facades/apiFacade";
 import AdminScreen from "./screens/AdminScreen";
 import DemoScreen from "./screens/DemoScreen";
 import RaceScreen from "./screens/RaceScreen";
+import SingleRaceScreen from "./screens/SingleRaceScreen";
 //import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
@@ -43,6 +44,11 @@ function App() {
           path="/race"
           loggedIn={loggedIn}
           component={RaceScreen}
+        />
+        <PrivateRoute
+          path="/SingleRace"
+          loggedIn={loggedIn}
+          component={SingleRaceScreen}
         />
         <PrivateRoute
           path="/admin"

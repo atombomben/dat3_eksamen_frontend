@@ -1,10 +1,14 @@
 import { Table } from "react-bootstrap";
 import { URL } from "../constants.js";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function RacesComponent() {
 
+
+const pathname = window.location.pathname
 const [races, setRaces] = useState([])
     
     useEffect(() => {
@@ -22,6 +26,7 @@ const [races, setRaces] = useState([])
       <>
       <div>
           <Table striped bordered hover>
+            
             <thead>
             <tr>
             <td>ID</td>
@@ -32,14 +37,17 @@ const [races, setRaces] = useState([])
             </tr>
               </thead>
               <tbody>
-        {races.map((x) => {
+        {races.map((race) => {
           return (
-          <tr key={x.id}>
-          <td>{x.id}</td>
-          <td>{x.name}</td>
-          <td>{x.time}</td>
-          <td>{x.location}</td>
-          <td>{x.date}</td>
+          <tr key={race.id}>  
+          <td><Link to={{
+              pathname: `/SingleRace/${race.id}`
+              ,state: {race}
+              }}> {race.id}</Link></td>
+          <td>{race.name}</td>
+          <td>{race.time}</td>
+          <td>{race.location}</td>
+          <td>{race.date}</td>
           </tr>
           )
         })}
