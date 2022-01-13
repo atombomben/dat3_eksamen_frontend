@@ -7,22 +7,22 @@ function SingleRaceComponent() {
 
 const pathname = window.location.pathname;
 const myArray = pathname.split("/");
-const id = parseInt(myArray[2]);
-
-const [race, setRace] = useState([])
+const id = parseInt(myArray[3]);
+console.log(myArray[3]);
+const [cars, setCars] = useState([])
     
     useEffect(() => {
       fetch(URL + "/api/race/" + id)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      setRace(data);
+      setCars(data.cars);
     });
     }, []);
     
     return (
       <>
-      {race.cars.length > 0 ? (
+      {cars.length > 0 ? (
       <>
       <div>
           <Table striped bordered hover>
@@ -37,7 +37,7 @@ const [race, setRace] = useState([])
             </tr>
               </thead>
               <tbody>
-        {race.cars.map((car) => {
+        {cars.map((car) => {
           return (
           <tr key={car.id}>  
           <td>{car.id}</td>
@@ -55,7 +55,7 @@ const [race, setRace] = useState([])
       )
        :
       (
-      <h2>Failed fetching data</h2>
+      <h2>No cars signed up for the race</h2>
       )}
       </>
       );
