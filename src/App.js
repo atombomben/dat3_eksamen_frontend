@@ -5,10 +5,10 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import Nav from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
 import Home from "./screens/HomeScreen";
-import ProtectedScreen from "./screens/ProtectedScreen";
 import Facade from "./facades/apiFacade";
 import AdminScreen from "./screens/AdminScreen";
 import DemoScreen from "./screens/DemoScreen";
+import RaceScreen from "./screens/RaceScreen";
 //import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
@@ -40,9 +40,9 @@ function App() {
         </Route>
         <PrivateRoute path="/demo" loggedIn={loggedIn} component={DemoScreen} />
         <PrivateRoute
-          path="/protected"
+          path="/race"
           loggedIn={loggedIn}
-          component={ProtectedScreen}
+          component={RaceScreen}
         />
         <PrivateRoute
           path="/admin"
