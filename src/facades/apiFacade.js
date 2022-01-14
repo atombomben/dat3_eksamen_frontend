@@ -32,6 +32,15 @@ const Facade = () => {
     return JSON.parse(localStorage.getItem("user"));
   };
 
+  const setRace = (name, date, time, location) => {
+    const race = { name, date, time, location };
+    //makes the user object in json format, as you cant store objects in localStorage
+    localStorage.setItem("race", JSON.stringify(race));
+  };
+  const getRace = () => {
+    return JSON.parse(localStorage.getItem("race"));
+  };
+
   const setToken = (token) => {
     localStorage.setItem("jwtToken", token);
   };
@@ -72,6 +81,8 @@ const Facade = () => {
     login,
     logout,
     handleHttpErrors,
+    setRace,
+    getRace
   };
 };
 

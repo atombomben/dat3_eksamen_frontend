@@ -1,4 +1,5 @@
 import CreateUserComponent from "../components/CreateUserComponent";
+import CreateRaceComponent from "../components/CreateRaceComponent";
 
 const AdminScreen = (props) => {
   return (
@@ -9,6 +10,9 @@ const AdminScreen = (props) => {
         <>
           <h2 className="header">AdminScreen</h2>
           <CreateUserComponent />
+          <br></br>
+          <br></br>
+          <CreateRaceComponent />
         </>
       ) : (
         <h2 className="header">You are not allowed here!</h2>

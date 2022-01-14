@@ -8,7 +8,7 @@ const examFacade = () => {
   };
 
   return {
-    createUser,
+    createUser
   };
 };
 
