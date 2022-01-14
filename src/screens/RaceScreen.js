@@ -1,7 +1,6 @@
 import { Table } from "react-bootstrap";
 import { URL } from "../constants.js";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 

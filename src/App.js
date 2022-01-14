@@ -7,7 +7,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import Home from "./screens/HomeScreen";
 import Facade from "./facades/apiFacade";
 import AdminScreen from "./screens/AdminScreen";
-import DemoScreen from "./screens/DemoScreen";
 import RaceScreen from "./screens/RaceScreen";
 import SingleRaceScreen from "./screens/SingleRaceScreen";
 //import PrivateRoute from "./components/PrivateRoute";
@@ -39,7 +38,7 @@ function App() {
         <Route exact path="/">
           <Home user={user} />
         </Route>
-        <PrivateRoute path="/demo" loggedIn={loggedIn} component={DemoScreen} />
+
         <PrivateRoute
           path="/race"
           loggedIn={loggedIn}

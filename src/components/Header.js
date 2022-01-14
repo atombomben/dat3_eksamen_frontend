@@ -33,11 +33,6 @@ const Nav = (props) => {
               </a>
             </li>
             <li>
-              <NavLink exact="true" activeclassname="active" to="/demo">
-                Demo
-              </NavLink>
-            </li>
-            <li>
               <NavLink exact="true" activeclassname="active" to="/race">
                 Race
               </NavLink>
